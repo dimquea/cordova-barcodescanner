@@ -96,6 +96,7 @@ A full example could be:
       },
       {
           preferFrontCamera : true, // iOS and Android
+		  preferCancel : true, // Android
           showFlipCameraButton : true, // iOS and Android
           showTorchButton : true, // iOS and Android
           torchOn: true, // Android, launch with the torch switched on (if available)
