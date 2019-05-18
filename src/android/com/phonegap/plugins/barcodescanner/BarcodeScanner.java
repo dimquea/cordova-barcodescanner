@@ -54,6 +54,7 @@ public class BarcodeScanner extends CordovaPlugin {
     private static final String TYPE = "type";
     private static final String PREFER_FRONTCAMERA = "preferFrontCamera";
     private static final String PREFER_CANCEL = "preferCancel";
+	private static final String PREFER_TEXT = "preferPrompt";
     private static final String ORIENTATION = "orientation";
     private static final String SHOW_FLIP_CAMERA_BUTTON = "showFlipCameraButton";
     private static final String RESULTDISPLAY_DURATION = "resultDisplayDuration";
@@ -148,22 +149,22 @@ public class BarcodeScanner extends CordovaPlugin {
 		cordova.getActivity().runOnUiThread(new Runnable() {
             public void run() {
 				
- /*LinearLayout linearLayout = new LinearLayout(that.cordova.getActivity().getBaseContext());
- Button button = new Button(that.cordova.getActivity().getBaseContext());
- button.setText("X");
- button.setTextSize(16);
- button.setGravity(Gravity.CENTER);
- button.setOnClickListener(new Button.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        that.cordova.getActivity().finish();
-    }
- });
- linearLayout.addView(button);
- linearLayout.setX(0);
- linearLayout.setY(0);
- that.cordova.getActivity().addContentView(linearLayout, new LinearLayout.LayoutParams(
- LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));*/
+                /*LinearLayout linearLayout = new LinearLayout(that.cordova.getActivity().getBaseContext());
+                Button button = new Button(that.cordova.getActivity().getBaseContext());
+                button.setText("X");
+                button.setTextSize(16);
+                button.setGravity(Gravity.CENTER);
+                button.setOnClickListener(new Button.OnClickListener() {
+                   @Override
+                   public void onClick(View v) {
+                       that.cordova.getActivity().finish();
+                   }
+                });
+                linearLayout.addView(button);
+                linearLayout.setX(0);
+                linearLayout.setY(0);
+                that.cordova.getActivity().addContentView(linearLayout, new LinearLayout.LayoutParams(
+                LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));*/
 				
                 Intent intentScan = new Intent(that.cordova.getActivity().getBaseContext(), CaptureActivity.class);
                 intentScan.setAction(Intents.Scan.ACTION);
@@ -205,6 +206,7 @@ public class BarcodeScanner extends CordovaPlugin {
 
                         intentScan.putExtra(Intents.Scan.CAMERA_ID, obj.optBoolean(PREFER_FRONTCAMERA, false) ? 1 : 0);
 						intentScan.putExtra(Intents.Scan.SHOW_CANCEL_BUTTON, obj.optBoolean(PREFER_CANCEL, false));
+						intentScan.putExtra(Intents.Scan.SHOW_PROMPT, obj.optBoolean(PREFER_TEXT, false));
                         intentScan.putExtra(Intents.Scan.SHOW_FLIP_CAMERA_BUTTON, obj.optBoolean(SHOW_FLIP_CAMERA_BUTTON, false));
                         intentScan.putExtra(Intents.Scan.SHOW_TORCH_BUTTON, obj.optBoolean(SHOW_TORCH_BUTTON, false));
                         intentScan.putExtra(Intents.Scan.TORCH_ON, obj.optBoolean(TORCH_ON, false));
@@ -260,7 +262,7 @@ public class BarcodeScanner extends CordovaPlugin {
             } else if (resultCode == Activity.RESULT_CANCELED) {
                 JSONObject obj = new JSONObject();
                 try {
-                    obj.put(TEXT, "Placeholder!!!");
+                    obj.put(TEXT, "");
                     obj.put(FORMAT, "");
                     obj.put(CANCELLED, true);
                 } catch (JSONException e) {
