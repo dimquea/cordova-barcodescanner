@@ -1,86 +1,26 @@
 {
-  "_from": "cordova-appivo-barcodescanner",
-  "_id": "cordova-appivo-barcodescanner@1.0.0",
-  "_inBundle": false,
-  "_integrity": "sha512-s+wY33+FPgfl/Yc81mIKoPuBX9yhRow0ARGpFZkmiwNplNs8eEwS+XnAzUlYCn77yvyiSymRmSMjjQdbvyHDuQ==",
-  "_location": "/cordova-appivo-barcodescanner",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "cordova-appivo-barcodescanner",
-    "name": "cordova-appivo-barcodescanner",
-    "escapedName": "cordova-appivo-barcodescanner",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "",
-  "_shasum": "829348e7e2e4353b39ea1ef15fed08b4617f683a",
-  "_spec": "cordova-appivo-barcodescanner",
-  "_where": "C:\\Users\\-manutd-",
-  "author": {
-    "name": "Adobe PhoneGap Team"
-  },
-  "bugs": {
-    "url": ""
-  },
-  "bundleDependencies": false,
-  "cordova": {
-    "id": "cordova-appivo-barcodescanner",
-    "platforms": [
-      "ios",
-      "android",
-      "windows",
-      "browser"
-    ]
-  },
-  "deprecated": false,
-  "description": "You can use the BarcodeScanner plugin to scan different types of barcodes (using the device's camera) and get the metadata encoded in them for processing within your application.",
-  "devDependencies": {
-    "jasmine-node": "1.14.5",
-    "pluginpub": "^0.0.9"
-  },
-  "engines": {
-    "cordovaDependencies": {
-      "7.0.0": {
-        "cordova-android": ">=6.3.0"
-      },
-      "7.1.0": {
-        "cordova": ">=7.1.0",
-        "cordova-android": ">=6.3.0"
-      },
-      "8.0.0": {
-        "cordova": ">=7.1.0",
-        "cordova-android": ">=6.3.0"
-      },
-      "<7.0.0": {
-        "cordova-android": "<6.3.0"
-      }
-    }
-  },
-  "homepage": "",
-  "keywords": [
-    "ecosystem:cordova",
-    "ecosystem:phonegap",
-    "cordova-ios",
-    "cordova-android",
-    "cordova-windows",
-    "cordova-browser",
-    "cordova:plugin"
-  ],
-  "license": "MIT",
   "name": "cordova-appivo-barcodescanner",
+  "version": "1.0.0",
+  "description": "Plugin to scan barcodes using camera",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://gitlab.com/appivo/cordova-appivo-barcodescanner.git"
   },
-  "scripts": {
-    "test": "jasmine-node --color spec"
+  "keywords": [
+    "barcode",
+    "scanner",
+    "QR",
+    "cordova",
+    "plugin"
+  ],
+  "author": "Appivo AB",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/appivo/cordova-appivo-barcodescanner/issues"
   },
-  "version": "8.0.1"
+  "homepage": "https://gitlab.com/appivo/cordova-appivo-barcodescanner#readme"
 }
