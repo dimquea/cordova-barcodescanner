@@ -1,6 +1,6 @@
 {
   "name": "cordova-appivo-barcodescanner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plugin to scan barcodes using camera",
   "main": "index.js",
   "scripts": {
