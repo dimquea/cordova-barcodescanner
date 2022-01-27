@@ -867,10 +867,18 @@ parentViewController:(UIViewController*)parentViewController
     self.toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
     id cancelButton = [[UIBarButtonItem alloc]
-                       initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                       initWithBarButtonSystemItem:UIBarButtonSystemItemStop
+                       //initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                        target:(id)self
                        action:@selector(cancelButtonPressed:)
                        ];
+    
+    /*id cancelButton = [[UIBarButtonItem alloc]
+                       initWithTitle: [[[NSBundle mainBundle] infoDictionary] objectForKey:@"NSScanerCancelButton" ]
+                       style: UIBarButtonItemStylePlain
+                       target: (id)self
+                       action: @selector(cancelButtonPressed:)
+                       ];*/
 
 
     id flexSpace = [[UIBarButtonItem alloc]
@@ -895,15 +903,19 @@ parentViewController:(UIViewController*)parentViewController
                         ];
 
     if (_processor.isShowFlipCameraButton) {
-      items = [NSMutableArray arrayWithObjects:flexSpace, cancelButton, flexSpace, flipCamera, shutterButton, nil];
+      items = [NSMutableArray arrayWithObjects:cancelButton, flexSpace, flipCamera, shutterButton, flexSpace, nil];
+      //items = [NSMutableArray arrayWithObjects:flexSpace, cancelButton, flexSpace, flipCamera, shutterButton, nil];
     } else {
-      items = [NSMutableArray arrayWithObjects:flexSpace, cancelButton, flexSpace, shutterButton, nil];
+      items = [NSMutableArray arrayWithObjects:cancelButton, flexSpace, shutterButton, flexSpace, nil];
+      //items = [NSMutableArray arrayWithObjects:flexSpace, cancelButton, flexSpace, shutterButton, nil];
     }
 #else
     if (_processor.isShowFlipCameraButton) {
-      items = [@[flexSpace, cancelButton, flexSpace, flipCamera] mutableCopy];
+      items = [@[cancelButton, flexSpace, flipCamera, flexSpace] mutableCopy];
+      //items = [@[flexSpace, cancelButton, flexSpace, flipCamera] mutableCopy];
     } else {
-      items = [@[flexSpace, cancelButton, flexSpace] mutableCopy];
+      items = [@[cancelButton, flexSpace] mutableCopy];
+      //items = [@[flexSpace, cancelButton, flexSpace] mutableCopy];
     }
 #endif
 
@@ -922,7 +934,8 @@ parentViewController:(UIViewController*)parentViewController
                                   action:@selector(torchButtonPressed:)
                            ];
 
-      [items insertObject:torchButton atIndex:0];
+      [items addObject:torchButton];
+      //[items insertObject:torchButton atIndex:0];
     }
   }
     self.toolbar.items = items;
