@@ -1,5 +1,5 @@
 {
-  "name": "cordova-appivo-barcodescanner",
+  "name": "cordova-barcodescanner",
   "version": "1.0.1",
   "description": "Plugin to scan barcodes using camera",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/appivo/cordova-appivo-barcodescanner.git"
+    "url": "git+https://github.com/dimquea/cordova-barcodescanner.git"
   },
   "keywords": [
     "barcode",
@@ -17,10 +17,10 @@
     "cordova",
     "plugin"
   ],
-  "author": "Appivo AB",
+  "author": "Appivo AB/dimquea",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/appivo/cordova-appivo-barcodescanner/issues"
+    "url": "https://github.com/dimquea/cordova-barcodescanner/issues"
   },
-  "homepage": "https://gitlab.com/appivo/cordova-appivo-barcodescanner#readme"
+  "homepage": "https://github.com/dimquea/cordova-barcodescanner#readme"
 }

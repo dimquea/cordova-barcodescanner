@@ -1,7 +1,5 @@
 Fork of phonegap-plugin-barcodescanner
 
-Note: Use version 1.0.0, version 1.0.1 contains custom changed related to appivo platform.
-
 # PhoneGap Plugin BarcodeScanner
 ================================
 
@@ -14,19 +12,10 @@ Follows the [Cordova Plugin spec](https://cordova.apache.org/docs/en/latest/plug
 ## Installation
 
 
-This requires phonegap 7.1.0+ ( current stable v8.0.0 )
+This requires cordova 7.1.0+
 
-    phonegap plugin add phonegap-plugin-barcodescanner
+    cordova plugin add https://github.com/dimquea/cordova-barcodescanner
 
-It is also possible to install via repo url directly ( unstable )
-
-    phonegap plugin add https://github.com/phonegap/phonegap-plugin-barcodescanner.git
-
-Optional variables:
-This plugin requires the Android support library v4. The minimum version is `24.1.0`. Default value is `27.+`.  Check out the latest version [here](https://developer.android.com/topic/libraries/support-library/revisions.html).
-```
-phonegap plugin add phonegap-plugin-barcodescanner --variable ANDROID_SUPPORT_V4_VERSION="27.1.1"
-```
 ### Supported Platforms
 
 - Android
@@ -43,19 +32,6 @@ Note: Windows 10 applications can not be build for `AnyCPU` architecture, which 
 
 ```
 cordova run windows -- --archs=x86
-```
-
-### PhoneGap Build Usage
-
-Add the following to your config.xml:
-
-```
-<!-- add a version here, otherwise PGB will use whatever the latest version of the package on npm is -->
-<plugin name="phonegap-plugin-barcodescanner" />
-```
-On PhoneGap Build if you're using a version of cordova-android of 4 or less, ensure you're building with gradle:
-```
-<preference name="android-build-tool" value="gradle" />
 ```
 
 ## Using the plugin ##
@@ -185,3 +161,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+## Credits ##
+
+Originally posted [appivo](https://gitlab.com/appivo/cordova-appivo-barcodescanner) on GitLab
